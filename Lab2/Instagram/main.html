@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Instagram</title>
+        <style>
+            body{
+                font-family:Arial; 
+                background-color: #fafafa; 
+            }
+            ul{
+                list-style:none;
+                display:flex;
+                flex-wrap: nowrap;
+
+            }
+
+            li{
+                margin:4px;
+                display:flex;
+                flex-wrap: nowrap;
+            }
+
+            select{
+                width: 56%;
+                margin-left: 40%;
+                border: 1px solid #fafafa;
+                background-color: #fafafa;
+                color:gray;
+            }
+
+
+            input{
+                margin: auto;
+                width: 80%;
+                background-color: #fafafa; 
+                border:0.1px;
+                border-color: #dbdbdb;
+                border-style: solid;
+                border-radius: 3px;
+                height: 30px;
+
+            }
+
+            button{
+                margin: auto;
+                width: 80%;
+            }
+
+
+            .leftBorder{
+                position: relative;
+                left: 0px;
+                width: 10%;
+            }
+
+            .rightBorder{
+                position: relative;
+                right: 0px;
+                width: 10%;
+            }
+            .upperBlock{
+                height: 40em;
+                display:flex;
+                margin: auto;
+                width: 70%;
+                margin-bottom: 5%;
+                margin-top:3%;
+
+
+            }
+            .subUpperBlock{
+                margin: auto;
+                width: 63%;
+            }
+            .lowerBlock{
+                margin: auto;
+                width: 100%;
+
+
+
+            }
+
+            .bottom{
+
+                font-family:Arial;
+                font-size: 13px;
+                color:gray;
+                display: flex;
+                width: 100%;
+            }
+
+            .bottom a{
+                text-decoration: none;
+                color:gray;
+            }
+
+            .bottom a:hover{
+                text-decoration: underline;
+            }
+            .lines{
+                position: relative;
+                right:0px;
+            }
+
+            .lines{
+
+            }
+
+
+            .firstLine{
+                margin:auto;
+                width: 50%;
+
+            }
+
+            .secondLine{
+                margin:auto;
+                width: 45%;
+                margin-top: -0.7%;
+            }
+
+            .thirdLine{
+                display:flex;
+                margin:auto;
+                width: 25%;
+            }
+
+            .thirdLine span{
+                margin: 3px;
+            }
+
+            .thirdLine div{
+                margin: 3px;
+            }
+
+            .main{
+                display: inline;
+
+            }
+
+            .auth{
+                background-color:white; 
+                border:1px;
+                border-style: solid;
+                border-color: #DEDEDE;
+                margin:10px;
+                height: 380px;
+            }
+            .auth ul{
+                display:initial;
+
+            }
+
+            .auth li{
+                margin:7px;
+            }
+
+            .auth button{
+                color:#3851a0;
+            }
+
+            .loginBlock{
+                margin-top: 5%;
+                float: right;
+                width: 45%;
+
+            }
+
+            .phones{
+                float: left;
+                width: 40%;
+            }
+
+            #ph1{
+
+            }
+
+            .fbButton{
+                border:none;
+                background-color: white;
+                cursor: pointer;
+                font-weight: bold;
+                margin-top: 30px;
+                margin-bottom: 10px;
+            }
+
+            .rstPsw{
+                border:none;
+                background-color: white;
+                cursor: pointer;
+
+            }
+
+            .appInst{
+                display: initial;
+                border:none;
+            }
+
+            .appInst span{
+                margin:auto;
+                width: 55%;
+                margin-top: -12px;
+                margin-bottom: 5px;
+            }
+
+            .appInst li.appLink{
+                margin:auto;
+                width: 85%;
+            }
+
+            .reg{
+                border:1px;
+                border-style: solid;
+                border-color: #DEDEDE;
+                margin:10px;
+                font-size: 85%;
+                height: 5em;
+            }
+
+            .subReg{
+                margin-top: 7%;
+                margin-left: 7%;
+                margin-right: 3%;
+                display: flex;
+                width: 99%;
+            }
+            .reg span{
+                margin-right: 4px;
+            }
+            .reg button{
+
+                margin: initial;
+                width: initial;
+            }
+
+            .otherPlat{
+                border:none;
+                margin:10px;
+            }
+
+            #loginButt{
+                background-color: #b2dffc;
+                border-radius: 5px;
+                height: 30px;
+                width: 82%;
+                margin-top: 5px;
+                color:white;
+                border:none;
+            }
+
+            .regBtn{
+                border:none;
+                background-color: #fafafa;
+                cursor: pointer;
+                color:#00a2f8;
+                font-weight: bold;
+            }
+
+            .logoInst{
+                margin:auto;
+                width: 70%;
+            }
+
+            #orText{
+                display: flex;
+                color: gray;
+                margin:auto;
+                margin-top: 20px;
+                width: 80%;
+            }
+
+            .divider{
+                width: 70%;
+                height: 0px;
+                margin-right: 10px;
+                margin-left: 10px;
+                border:1px solid gray;
+            }
+
+
+
+
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="upperBlock">
+                <div class="subUpperBlock">
+                    <div class ="phones"> 
+                        <img src="p2.png" id="ph1"></img> 
+                    </div>
+
+
+                    <div class="loginBlock">
+
+                        <div class="auth">
+                            <ul>
+                                <li><img src="logo.png" class="logoInst"></img></li>
+                                <li><input placeholder="Эл.почта или номер телефона"></input></li>
+                                <li><input placeholder="Пароль"></input></li>
+                                <li><button type="button" id="loginButt" disabled="true">Войти</button></li>
+                                <!-- Разделитель-->
+                                <li id="orText">
+                                    <div class="divider"></div>
+                                    <span>Или</span>
+                                    <div class="divider"></div>
+                                </li>
+                                <li>
+                                    <button type="button" class="fbButton">
+                                        <img></img>
+                                        <span>Войти через Facebook</span>
+                                    </button>
+                                </li>
+                                <li><button type="button" class="rstPsw">Забыли пароль?</button></li>
+                            </ul>
+
+                        </div>
+                        <div class = "reg">
+                            <div class="subReg">
+                                <span>У вас ещё нет аккаунта?</span>
+                                <button type="button" class="regBtn">Зарегистрироваться</button>
+                            </div>
+                            
+                        </div>
+                        <div class="otherPlat">
+                            <ul class="appInst">
+                                <li>
+                                    <span>Установите приложение.</span>
+                                </li>
+                                <li class="appLink">
+                                    <a href="https://apps.apple.com/app/instagram/id389801252?vt=lo"><img src="https://www.instagram.com/static/images/appstore-install-badges/badge_ios_russian-ru.png/bfba6d0fd6bd.png" width="150px"></img></a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D234285CC-9B21-477F-B23D-05E5FED87B35%26utm_content%3Dlo%26utm_medium%3Dbadge"><img src="https://www.instagram.com/static/images/appstore-install-badges/badge_android_russian-ru.png/4c70948c09f3.png" width="150px"></img></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="leftBorder"></div>
+                <div class="lowerBlock">
+                    <div class="lines">
+                        <div class="firstLine">
+                            <ul>
+                                <li>
+                                    <a href="https://about.instagram.com/" target="_blank">
+                                        Информация
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="https://about.instagram.com/blog/" target="_blank">Блог</a>
+                                </li>
+
+                                <li>
+                                    <a href="">Вакансии</a>
+                                </li>
+
+                                <li>
+                                    <a href="https://help.instagram.com/" target="_blank">Помощь</a>
+                                </li>
+                                <li>
+                                    <a href="">API</a>
+                                </li>
+
+                                <li>
+                                    <a href="">Конфиденциальность</a>
+                                </li>
+                                <li>
+                                    <a href="">Условия</a>
+                                </li>
+                                <li>
+                                    <a href="">Популярные аккаунты</a>
+                                </li>
+                                <li>
+                                    <a href="">Хэштеги</a>
+                                </li>
+                                <li>
+                                    <a href="">Места</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="secondLine">
+                            <ul>
+                                <li>
+                                    <a href="">
+                                        Красота
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Танцы и выступления
+                                    </a>
+                                </li>
+                                
+                                <li>
+                                    <a href="">
+                                        Фитнес
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="">
+                                        Еда и напитки
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Дом и сад
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Музыка
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Изобразительное искусство
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class ="thirdLine">
+                            <span>
+                                <select aria-label="Изменить язык отображения">
+                                    <option value="ru">Русский</option>
+                                    <option value="af">Afrikaans</option>
+                                    <option value="cs">Čeština</option>
+                                    <option value="da">Dansk</option>
+                                    <option value="de">Deutsch</option>
+                                    <option value="el">Ελληνικά</option>
+                                    <option value="en">English</option>
+                                    <option value="en-gb">English (UK)</option>
+                                    <option value="es">Español (España)</option>
+                                    <option value="es-la">Español</option>
+                                    <option value="fi">Suomi</option>
+                                    <option value="fr">Français</option>
+                                    <option value="id">Bahasa Indonesia</option>
+                                    <option value="it">Italiano</option>
+                                    <option value="ja">日本語</option>
+                                    <option value="ko">한국어</option>
+                                    <option value="ms">Bahasa Melayu</option>
+                                    <option value="nb">Norsk</option>
+                                    <option value="nl">Nederlands</option>
+                                    <option value="pl">Polski</option>
+                                    <option value="pt-br">Português (Brasil)</option>
+                                    <option value="pt">Português (Portugal)</option>
+                                    <option value="ru">Русский</option>
+                                    <option value="sv">Svenska</option>
+                                    <option value="th">ภาษาไทย</option>
+                                    <option value="tl">Filipino</option>
+                                    <option value="tr">Türkçe</option>
+                                    <option value="zh-cn">中文(简体)</option>
+                                    <option value="zh-tw">中文(台灣)</option>
+                                    <option value="bn">বাংলা</option>
+                                    <option value="gu">ગુજરાતી</option>
+                                    <option value="hi">हिन्दी</option>
+                                    <option value="hr">Hrvatski</option>
+                                    <option value="hu">Magyar</option>
+                                    <option value="kn">ಕನ್ನಡ</option>
+                                    <option value="ml">മലയാളം</option>
+                                    <option value="mr">मराठी</option>
+                                    <option value="ne">नेपाली</option>
+                                    <option value="pa">ਪੰਜਾਬੀ</option>
+                                    <option value="si">සිංහල</option>
+                                    <option value="sk">Slovenčina</option>
+                                    <option value="ta">தமிழ்</option>
+                                    <option value="te">తెలుగు</option>
+                                    <option value="vi">Tiếng Việt</option>
+                                    <option value="zh-hk">中文(香港)</option>
+                                    <option value="bg">Български</option>
+                                    <option value="fr-ca">Français (Canada)</option>
+                                    <option value="ro">Română</option>
+                                    <option value="sr">Српски</option>
+                                    <option value="uk">Українська</option>
+                                </select>
+                            </span>
+                            <div class="copyright">
+                            <div >© Instagram от Facebook, 2021</div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class ="rightBorder"></div>
+            </div>
+        </div>
+        
+        <script></script>
+        
+    </body>
+</html>

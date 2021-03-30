@@ -1,0 +1,11 @@
+ul{
+  display: inline-flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+li{
+  border : 1px solid gray;
+  margin: 0 auto;
+  width: 33%;
+}

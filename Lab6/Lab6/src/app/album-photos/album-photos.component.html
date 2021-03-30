@@ -1,0 +1,8 @@
+<ul *ngIf='photos'>
+  <li *ngFor='let photo of photos'>
+    <h1>{{photo.title}}</h1>
+    <a href={{photo.url}}><img src={{photo.thumbnailUrl}}></a>
+
+  </li>
+  <button type="button" name="button" (click)="goBack()">Back</button>
+</ul>
