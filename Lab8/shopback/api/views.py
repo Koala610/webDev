@@ -15,9 +15,10 @@ def product_list(request):
 
 def product_details(request, id):
     products = Product.objects.all()
-    for product in products:
+    products_json = [product.to_json() for product in products]
+    for product in products_json:
         if product['id'] == id:
-            return JsonResponse(product.to_json())
+            return JsonResponse(product)
     return JsonResponse({'message': 'Not found'},safe=False)
 
 def category_list(request):
@@ -27,7 +28,9 @@ def category_list(request):
 
 def category_details(request,id):
     categories = Category.objects.all()
-    for category in categories:
+    categories_json = [category.to_json() for category in categories]
+    for category in categories_json:
         if category['id'] == id:
-            return JsonResponse(category.to_json())
+            print(category)
+            return JsonResponse(category)
     return JsonResponse({'message': 'Not found'},safe=False)
