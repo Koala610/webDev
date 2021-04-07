@@ -15,3 +15,6 @@ Lab5/src/app/product-item/product-item.component.ts
 Lab5/src/app/product-list/product-list.component.html
 Lab5/src/app/product-list/product-list.component.ts
 Lab7/test_venv
+Lab8\shopback\api\__pycache__
+Lab8\shopback\api\migrations\__pycache__
+Lab8\shopback\shopback\__pycache__
