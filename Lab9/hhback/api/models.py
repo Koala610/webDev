@@ -19,11 +19,11 @@ class Company(models.Model):
         }
 
 
-class Category(models.Model):
+class Vacancy(models.Model):
     name =  models.CharField(max_length=200)
     description =  models.TextField()
     salary =  models.FloatField()
-    company =  models.ForeignKey(Company)
+    company =  models.ForeignKey(Company, on_delete=models.CASCADE, null=True)
 
 
     def to_json(self):
