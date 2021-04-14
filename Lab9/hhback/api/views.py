@@ -19,15 +19,22 @@ def interract_with_company_list(request):
         return JsonResponse(companies_json,safe=False)
     elif request.method == "POST":
         return HttpResponse("123")
+    elif request.method == "PUT":
+        return HttpResponse("put")
 
 @csrf_exempt
 def interract_with_company_details(request, id):
-    companies = Company.objects.all()
-    companies_json = [company.to_json() for company in companies]
-    try:
-        company = Company.objects.get(id = id)
-    except Company.DoesNotExist as e:
-        return JsonResponse({'message': str(e)},safe=False)
+    if request.method == "GET":
+        companies = Company.objects.all()
+        companies_json = [company.to_json() for company in companies]
+        try:
+            company = Company.objects.get(id = id)
+        except Company.DoesNotExist as e:
+            return JsonResponse({'message': str(e)},safe=False)
+    elif request.method == "POST":
+        return HttpResponse("123")
+    elif request.method == "PUT":
+        return HttpResponse("put")
 
 
 def get_vacancies(request, id):
@@ -46,15 +53,28 @@ def get_vacancies(request, id):
 #vacancies
 @csrf_exempt
 def interract_with_vacancy_list(request):
-    vacancies = Vacancy.objects.all()
-    vacancies_json = [Vacancy.to_json() for vacancy in vacancies]
-    return JsonResponse(vacancies_json, safe=False)
+    if request.method == "GET":
+        vacancies = Vacancy.objects.all()
+        vacancies_json = [Vacancy.to_json() for vacancy in vacancies]
+        return JsonResponse(vacancies_json, safe=False)
+    elif request.method == "POST":
+        return HttpResponse("123")
+    elif request.method == "PUT":
+        return HttpResponse("put")
 
 @csrf_exempt
 def interract_with_vacancy_details(request,id):
-    vacancies = Vacancy.objects.all()
-    vacancies_json = [Vacancy.to_json() for vacancy in vacancies]
-    try:
-        vacancy = Vacancy.objects.get(id = id)
-    except Vacancy.DoesNotExist as e:
-        return JsonResponse({'message': str(e)},safe=False)
+    if request.method == "GET":
+        vacancies = Vacancy.objects.all()
+        vacancies_json = [Vacancy.to_json() for vacancy in vacancies]
+        try:
+            vacancy = Vacancy.objects.get(id = id)
+        except Vacancy.DoesNotExist as e:
+            return JsonResponse({'message': str(e)},safe=False)
+    elif request.method == "POST":
+        return HttpResponse("123")
+    elif request.method == "PUT":
+        return HttpResponse("put")
+
+def get_top_ten(request):
+    pass
