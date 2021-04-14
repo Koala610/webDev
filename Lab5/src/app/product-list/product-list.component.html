@@ -1,0 +1,9 @@
+<<<<<<< HEAD
+<ul>
+  <li *ngFor = 'let item of items;let i = index'>
+    <app-product-item   [item] = 'item'  (remove) = 'onTaskRemove($event)'></app-product-item>
+  </li>
+</ul>
+=======
+<app-product-item *ngFor = 'let item of items;let i = index'  [item] = 'item' (remove) = 'onTaskRemove($event)'></app-product-item>
+>>>>>>> b5428bc97bd688502e6591d4d8746011e919e9c4

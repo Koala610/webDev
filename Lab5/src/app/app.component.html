@@ -1,0 +1,23 @@
+<<<<<<< HEAD
+<app-app-main></app-app-main>
+=======
+<header>
+<h1>Shop</h1>
+</header>
+
+<main>
+  <div class="container">
+
+    <div class="" *ngFor="let itemList of itemLists;let i = index">
+      <button class = 'btn list' type="button" name="button" (click) = "showCategory(i)">{{itemList.name}}</button>
+      <app-category   [itemList] = 'itemList' *ngIf = 'itemList.isVisible'></app-category>
+    </div>
+
+
+  </div>
+
+</main>
+
+
+<footer></footer>
+>>>>>>> b5428bc97bd688502e6591d4d8746011e919e9c4
