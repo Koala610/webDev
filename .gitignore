@@ -20,7 +20,9 @@ Lab7/test_venv
 Lab8\shopback\api\__pycache__
 Lab8\shopback\api\migrations\__pycache__
 Lab8\shopback\shopback\__pycache__
+Lab8\shopback\shopback\settings.py
 
 Lab9\hhback\api\__pycache__
 Lab9\hhback\api\migrations\__pycache__
 Lab9\hhback\hhback\__pycache__
+Lab9\hhback\hhback\settings.py
