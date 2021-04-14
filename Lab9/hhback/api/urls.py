@@ -15,15 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from api.views import test, get_company_list, get_company_details, get_vacancy_details, get_vacancy_list
+from api.views import test, interract_with_company_list, interract_with_company_details, interract_with_vacancy_details, interract_with_vacancy_list
 
 urlpatterns = [
     path('test/', test),
-    path("companies", get_company_list),
-    path("companies/<int:id>/", get_company_details),
+    path("companies/", interract_with_company_list),
+    path("companies/<int:id>/", interract_with_company_details),
     path("companies/<int:id>/vacancies/", test),
-    path("vacancies/", get_vacancy_list),
-    path("vacancies/<int:id>/", get_vacancy_details),
+    path("vacancies/", interract_with_vacancy_list),
+    path("vacancies/<int:id>/", interract_with_vacancy_details),
     path("vacancies/top_ten/", test)
 
 ]

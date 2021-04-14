@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http.response import HttpResponse, JsonResponse
 from api.models import Company, Vacancy
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
@@ -10,12 +11,17 @@ def test(request):
 
 
 #Companies
-def get_company_list(request):
-    companies = Company.objects.all()
-    companies_json = [company.to_json() for company in companies]
-    return JsonResponse(companies_json,safe=False)
+@csrf_exempt
+def interract_with_company_list(request):
+    if request.method == "GET":
+        companies = Company.objects.all()
+        companies_json = [company.to_json() for company in companies]
+        return JsonResponse(companies_json,safe=False)
+    elif request.method == "POST":
+        return HttpResponse("123")
 
-def get_company_details(request, id):
+@csrf_exempt
+def interract_with_company_details(request, id):
     companies = Company.objects.all()
     companies_json = [company.to_json() for company in companies]
     try:
@@ -38,12 +44,14 @@ def get_vacancies(request, id):
 
 
 #vacancies
-def get_vacancy_list(request):
+@csrf_exempt
+def interract_with_vacancy_list(request):
     vacancies = Vacancy.objects.all()
     vacancies_json = [Vacancy.to_json() for vacancy in vacancies]
     return JsonResponse(vacancies_json, safe=False)
 
-def get_vacancy_details(request,id):
+@csrf_exempt
+def interract_with_vacancy_details(request,id):
     vacancies = Vacancy.objects.all()
     vacancies_json = [Vacancy.to_json() for vacancy in vacancies]
     try:
